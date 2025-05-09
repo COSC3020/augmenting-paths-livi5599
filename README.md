@@ -35,11 +35,11 @@ answer, including your reasoning, to this markdown file.
 
 -----
 
-The worst-case complexity is big $\Theta(v^2)$, where v is the number of vertices in the graph.  This comes from the DFS function, which has a complexity of big $\Theta(v^2)$ that comes from a for loop and a line that filters from the unvisited array.  I included comments in my code that further explains how I got my answer.
+The worst-case complexity is big $\Theta(V^2 * E)$, where V is the number of vertices in the graph and E is the number of edges.  This comes from the DFS function, because when you take into account the for loop that iterates over the edges and the recursive call that has a runtime of big $\Theta(V^2)$, the runtime for DFS is big $\Theta(V^2 * E)$.  I included comments in my code that further explains how I got my answer.
 
 -----
 
-I received help from Ali, the "Depth-First Search Pseudocode" lecture slide, and ChatGPT.  Originally, I did not use a depth-first search in my implementation, and Ali was the one who told me I need to implement that.  I used the lecture slide mentioned as a guide for implementing the DFS function.  ChatGPT helped me with certain debugging.  For example, as shown in a previous commit, I iterated over all of the keys of the adjacency list instead of just the neighbors of the current vertex, and ChatGPT pointed that out, leading me to know what needed fixing.
+I received help from Ali, the "Depth-First Search Pseudocode" lecture slide, and ChatGPT.  Originally, I did not use a depth-first search in my implementation, and Ali was the one who told me I need to implement that.  I used the lecture slide mentioned as a guide for implementing the DFS function.  ChatGPT helped me with certain debugging.  For example, as shown in a previous commit, I iterated over all of the keys of the adjacency list instead of just the neighbors of the current vertex, and ChatGPT pointed that out, leading me to know what needed fixing.  It also helped me understand the difference between computing a runtime for an adjacency matrix representation and an adjacency list representation.  After I understood the difference, I was able to compute the runtime given above.
 
 I started this assignment last semester.
 
