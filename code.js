@@ -1,4 +1,4 @@
-function augmentingPath(graph, start, end) { //O(V^2*E)
+function augmentingPath(graph, start, end) { //O(V*E)
     if (start == end) { //O(1)
         return [start];
     }
@@ -18,11 +18,11 @@ function augmentingPath(graph, start, end) { //O(V^2*E)
         }
     }
 
-    let result = DFS(graph, path, unvisited, start, end); //O(V^2*E)
+    let result = DFS(graph, path, unvisited, start, end); //O(V*E)
     return result ? result : []; //O(1)
 }
 
-function DFS(graph, path, unvisited, start, end) { //O(V^2*E)
+function DFS(graph, path, unvisited, start, end) { //O(V*E)
     if (start == end) { //O(1)
         return path;
     }
@@ -30,7 +30,7 @@ function DFS(graph, path, unvisited, start, end) { //O(V^2*E)
         if (graph[start][neighbor] > 0 && unvisited.includes(neighbor)) {
             unvisited = unvisited.filter(n => n !== neighbor); //O(V)
             path.push(neighbor); //O(1)
-            let result = DFS(graph, path, unvisited, neighbor, end); //O(V^2)
+            let result = DFS(graph, path, unvisited, neighbor, end); //O(V)
             if (result) return result; //O(1)
             path.pop(); //O(1)
         }
