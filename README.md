@@ -35,7 +35,7 @@ answer, including your reasoning, to this markdown file.
 
 -----
 
-The worst-case complexity is big $\Theta(V^2 * E)$, where V is the number of vertices in the graph and E is the number of edges.  This comes from the DFS function, because when you take into account the for loop that iterates over the edges and the recursive call that has a runtime of big $\Theta(V^2)$, the runtime for DFS is big $\Theta(V^2 * E)$.  I included comments in my code that further explains how I got my answer.
+The worst-case complexity is big $\Theta(V * E)$, where V is the number of vertices in the graph and E is the number of edges.  This comes from the DFS function, because when you take into account the for loop that iterates over the edges and the fact that the if statement inside the loop has a runtime of big $\Theta(V)$, the runtime for DFS is big $\Theta(V * E)$.  I included comments in my code that further explains how I got my answer.
 
 -----
 
