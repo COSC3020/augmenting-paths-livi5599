@@ -1,4 +1,4 @@
-function augmentingPath(graph, start, end) { //O(V*E)
+function augmentingPath(graph, start, end) { //O(|V|+|E|)
     if (start == end) { //O(1)
         return [start];
     }
@@ -18,11 +18,11 @@ function augmentingPath(graph, start, end) { //O(V*E)
         }
     }
 
-    let result = DFS(graph, path, unvisited, start, end); //O(V*E)
+    let result = DFS(graph, path, unvisited, start, end); //O(|V|+|E|)
     return result ? result : []; //O(1)
 }
 
-function DFS(graph, path, unvisited, start, end) { //O(V*E)
+function DFS(graph, path, unvisited, start, end) { //O(|V|+|E|)
     if (start == end) { //O(1)
         return path;
     }
